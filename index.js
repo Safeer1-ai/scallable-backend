@@ -17,6 +17,10 @@ app.use('/api', uploadRoutes);  // 👈 connect router
 app.use('/api/comments', commentRoutes);
 app.use("/api/auth", authRoutes);
 
+app.get("/", (req, res) => {
+  res.send(`Server running on http://localhost:${PORT}`);
+});
+
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
